@@ -1,0 +1,166 @@
+# Minimalismo Monolítico
+
+## Product Overview
+
+**The Pitch:** An immersive digital manifesto for an architecture studio designing brutalist eco-retreats in high mountains. It translates the physical weight of exposed concrete and the serene isolation of wild nature into a monumental web experience.
+
+**For:** High-net-worth individuals, environmental patrons, and architecture purists seeking absolute, severe isolation in nature.
+
+**Device:** desktop
+
+**Design Direction:** Unapologetically heavy, leveraging massive grotesque typography, vast negative space ("platinum fog"), and raw textures. 
+
+**Inspired by:** Valerio Olgiati's digital portfolio, the brutalist web design of the Kntxt label.
+
+---
+
+## Screens
+
+- **[Home] El Manifiesto:** A monumental typographic intro paired with a singular, scale-defining mountain retreat image.
+- **[Index] Los Retiros:** A brutally staggered, large-scale gallery of architectural projects.
+- **[Detail] El Refugio:** Immersive project deep-dive featuring dense shadows and warm volumetric light photography.
+- **[Contact] El Encuentro:** A brutally sparse inquiry form pushed to the very bottom of a massive viewport.
+
+---
+
+## Key Flows
+
+**The Descent into Isolation:** User explores the studio's philosophy and finds a specific retreat.
+
+1. User is on **Home** -> sees massive `8vw` typography claiming the screen and a stark concrete/nature image.
+2. User clicks **"EXPLORAR"** -> screen fades through a heavy '#EBEBE6' block transition into **Index**.
+3. User hovers over a project image -> image saturates slowly, cursor turns into a `[+]` crosshair.
+4. User clicks project -> enters **Detail**, enveloped in full-screen imagery and monolithic text.
+
+---
+
+<details>
+<summary>Design System</summary>
+
+## Color Palette
+
+- **Primary:** `#2C2C2A` - Deep Concrete (Buttons, main interactions, massive text)
+- **Background:** `#EBEBE6` - Platinum Fog (Page background, massive negative space)
+- **Surface:** `#D1D1CB` - Limestone (Secondary backgrounds, image placeholders)
+- **Text:** `#2C2C2A` - Deep Concrete (Body text)
+- **Muted:** `#9C9C98` - Weathered Stone (Borders, secondary text, timestamps)
+- **Accent:** `#4A5D4E` - Lichen Green (Success states, subtle highlights, raw nature accents)
+
+## Typography
+
+**Monument Extended** for crushing weight; **Space Grotesk** for stark, technical legibility.
+
+- **Headings:** `Monument Extended`, 800, 64-120px (Tightly tracked, uppercase)
+- **Subheadings:** `Monument Extended`, 400, 24px
+- **Body:** `Space Grotesk`, 400, 16px
+- **Small text:** `Space Grotesk`, 500, 12px (Uppercase, tracked out `0.05em`)
+- **Buttons:** `Monument Extended`, 800, 14px
+
+**Style notes:** Sharp 0px border radii. No drop shadows. Depth is created purely through scale, stark contrast, and massive margins (`8vw` minimum edge spacing). Images have a subtle film grain overlay.
+
+## Design Tokens
+
+```css
+:root {
+  --color-primary: #2C2C2A;
+  --color-background: #EBEBE6;
+  --color-surface: #D1D1CB;
+  --color-text: #2C2C2A;
+  --color-muted: #9C9C98;
+  --color-accent: #4A5D4E;
+  
+  --font-heading: 'Monument Extended', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  
+  --radius: 0px;
+  --spacing-base: 8px;
+  --spacing-margin: 8vw;
+  
+  --transition-slow: 0.8s cubic-bezier(0.8, 0, 0.1, 1);
+}
+```
+
+</details>
+
+---
+
+<details>
+<summary>Screen Specifications</summary>
+
+### Home: El Manifiesto
+
+**Purpose:** Establish the studio's raw, uncompromising brutalist philosophy.
+
+**Layout:** 100vh viewport. Text anchored tightly to the left margin, single image anchored to the bottom right. 60% negative space.
+
+**Key Elements:**
+- **Hero Typography:** `120px`, `#2C2C2A`, reading "AISLAMIENTO MONUMENTAL."
+- **Hero Image:** `45vw` width, 0px radius, heavily desaturated image of a concrete monolith in fog.
+- **Nav Header:** Absolute top, `8vw` padding, sparse `12px` links spaced far apart.
+
+**States:**
+- **Loading:** Entire screen is `#EBEBE6`, text reveals from bottom-up clipping masks.
+
+**Interactions:**
+- **Hover Image:** Smoothly transitions to full color (warm volumetric lights), taking 0.8s.
+
+### Index: Los Retiros
+
+**Purpose:** Browse available or completed architectural projects.
+
+**Layout:** Single column, heavily staggered vertical list. No grid.
+
+**Key Elements:**
+- **Project Block:** `60vw` width images alternating left and right alignments per row.
+- **Project Title:** Placed directly over the image bottom-left corner, `48px`, `#EBEBE6` text.
+- **Project Meta:** `14px` raw specs (e.g., "ALTITUD: 2,400M | MATERIAL: HORMIGÓN EN MASA") rotated 90 degrees alongside the image.
+
+**Interactions:**
+- **Scroll:** Images have a subtle 10% parallax effect against the background.
+
+### Detail: El Refugio
+
+**Purpose:** Deep-dive into a specific mountain retreat.
+
+**Layout:** Continuous scroll. Full-bleed hero -> narrow `40vw` reading column -> brutalist image masonry.
+
+**Key Elements:**
+- **Hero Section:** 100vh full-bleed image, dark moss/wet concrete textures.
+- **Title Lockup:** `80px` text intersecting the bottom edge of the hero image.
+- **Data Sheet:** A rigid, border-lined list (`1px solid #9C9C98`) detailing coordinates, square footage, and climate.
+
+**Interactions:**
+- **Scroll:** Hero image dims slowly into `#2C2C2A` as user scrolls down.
+
+### Contact: El Encuentro
+
+**Purpose:** Intake for high-net-worth clients.
+
+**Layout:** Aggressively bottom-heavy. Top 70vh is completely empty `#EBEBE6` fog.
+
+**Key Elements:**
+- **Form Container:** `100%` width at the bottom, split into 3 massive input fields.
+- **Inputs:** `border-bottom: 2px solid #2C2C2A`, no side/top borders, `24px` input text.
+- **Submit Button:** `120px` tall, full width of its column, `#2C2C2A` background, `#EBEBE6` text, reading "INICIAR".
+
+**States:**
+- **Error:** Border turns `#2C2C2A`, harsh 0.1s shake. No red used (too generic).
+- **Loading:** Button text replaces with a rigid spinning geometric block.
+- **Empty:** Placeholder text in `#9C9C98`.
+
+</details>
+
+---
+
+<details>
+<summary>Build Guide</summary>
+
+**Stack:** HTML + Tailwind CSS v3, GSAP for heavy scroll/reveal animations.
+
+**Build Order:**
+1. **Home** - Establishes the extreme typography scaling and the `8vw` fluid margins.
+2. **Index** - Sets up the staggered layout math and parallax image components.
+3. **Detail** - Introduces the dark mode inversion (full bleed imagery) and data sheet structures.
+4. **Contact** - Tests bottom-anchored layouts and brutalist form resets.
+
+</details>

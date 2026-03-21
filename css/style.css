@@ -1,0 +1,155 @@
+/* Lenis Setup */
+html.lenis, html.lenis body {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}
+
+body {
+    background-color: #EBEBE6;
+    color: #2C2C2A;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Space Grotesk', sans-serif;
+    cursor: crosshair;
+}
+
+/* Typography */
+.monument-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.text-specs {
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Brutalist Forms */
+.brutalist-input {
+    border: none !important;
+    border-bottom: 2px solid #2C2C2A !important;
+    background: transparent;
+    font-size: 24px;
+    padding: 1rem 0;
+    width: 100%;
+    outline: none !important;
+    border-radius: 0;
+    transition: border-width 0.1s ease;
+    box-shadow: none !important;
+}
+.brutalist-input::placeholder {
+    color: #9C9C98;
+    font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase;
+}
+.brutalist-input:focus {
+    border: none !important;
+    border-bottom: 4px solid #17cf32 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Image Treatments */
+.brutalist-image {
+    filter: grayscale(100%) contrast(1.2);
+    transition: filter 0.8s cubic-bezier(0.8, 0, 0.1, 1);
+    position: relative;
+}
+.brutalist-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+.brutalist-image:hover {
+    filter: grayscale(0%) contrast(1.1);
+}
+
+.project-image-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+.project-image {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 140%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.8, 0, 0.1, 1), filter 0.8s ease;
+    filter: grayscale(80%) contrast(1.2);
+    will-change: transform;
+}
+.project-block:hover .project-image {
+    filter: grayscale(0%) contrast(1.1);
+    transform: scale(1.05);
+}
+
+/* Writing Modes */
+.meta-text-left {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+.meta-text-right {
+    writing-mode: vertical-rl;
+}
+
+/* Grain Overlays & Dimmers */
+.grain-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.hero-dimmer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(44, 44, 42, 0.9) 100%);
+    opacity: 0; 
+    pointer-events: none;
+}
+
+/* Utilities */
+.rounded-brutal, .rounded-none { border-radius: 0px !important; }
+.reveal-mask { overflow: hidden; display: inline-block; }
+.reveal-text { display: inline-block; }
+
+.nav-link {
+    transition: opacity 0.3s ease, font-weight 0.3s ease;
+    opacity: 0.5;
+}
+.nav-link.active, .nav-link:hover {
+    opacity: 1;
+}
+
+@keyframes brutalShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+.error-shake {
+    animation: brutalShake 0.1s ease-in-out;
+    border-bottom: 4px solid #2C2C2A !important;
+}
