@@ -1,27 +1,28 @@
-# Estudio Monolito - Architecture Landing Page
+# Estudio Monolito - Página de Inicio de Arquitectura
 
-A monumental, brutalist landing page for a fictional architecture studio, built with modern web technologies.
+Una página de inicio monumental y brutalista para un estudio de arquitectura ficticio, construida con tecnologías web modernas.
 
-## Features
-- **Brutalist Design**: Features high-contrast typography, raw layouts, and a concrete-inspired color palette.
-- **Smooth Scrolling**: Integrated with Lenis for butter-smooth vertical scrolling.
-- **GSAP Animations**: Features complex reveal animations, image parallax effects, and scroll-triggered state changes.
-- **Responsive**: Fully responsive design leveraging Tailwind CSS.
+## Características
+- **Diseño Brutalista**: Presenta tipografía de alto contraste, diseños crudos y una paleta de colores inspirada en el hormigón.
+- **Desplazamiento Suave**: Integrado con Lenis para un desplazamiento vertical suave como la seda.
+- **Animaciones GSAP**: Presenta animaciones reveladoras complejas, efectos de paralaje de imagen y cambios de estado activados por el desplazamiento.
+- **Responsivo**: Diseño totalmente responsivo que utiliza Tailwind CSS.
 
-## File Structure
-- `index.html`: The main entry point containing the unified single-page layout.
-- `css/style.css`: Custom CSS for Lenis setup, typography, brutalist forms, and visual treatments.
-- `js/main.js`: Contains all JS logic for GSAP timelines, ScrollTrigger instances, Lenis integration, and form handling.
-- `assets/images/`: Contains all the high-quality project imagery.
+## Estructura de Archivos
+- `index.html`: El punto de entrada principal que contiene el diseño unificado de una sola página.
+- `css/style.css`: CSS personalizado para la configuración de Lenis, tipografía, formas brutalistas y tratamientos visuales.
+- `js/main.js`: Contiene toda la lógica JS para las líneas de tiempo de GSAP, las instancias de ScrollTrigger, la integración de Lenis y el manejo de formularios.
+- `assets/images/`: Contiene todas las imágenes de alta calidad de los proyectos.
 
-## Technologies Used
+## Tecnologías Utilizadas
 - HTML5
-- Tailwind CSS v3 (via CDN)
+- Tailwind CSS v3 (vía CDN)
 - GSAP & ScrollTrigger
 - Lenis (Smooth Scroll)
 
-## Setup
-Simply open `index.html` in your browser or run a local dev server:
+## Configuración
+Simplemente abra `index.html` en su navegador o ejecute un servidor de desarrollo local:
 ```bash
 npx serve .
 ```
+
