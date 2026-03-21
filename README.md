@@ -1,6 +1,6 @@
 # Estudio Monolito - Página de Inicio de Arquitectura
 
-Una página de inicio monumental y brutalista para un estudio de arquitectura ficticio, construida con tecnologías web modernas.
+Una página de inicio monumental y brutalista para un estudio de arquitectura, construida con tecnologías web modernas.
 
 ## Características
 - **Diseño Brutalista**: Presenta tipografía de alto contraste, diseños crudos y una paleta de colores inspirada en el hormigón.
