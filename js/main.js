@@ -20,6 +20,26 @@ gsap.ticker.add((time)=>{
 
 gsap.ticker.lagSmoothing(0);
 
+// --- SCROLL-AWARE HEADER ---
+const header = document.querySelector('.js-header');
+const SCROLL_THRESHOLD = 60; // px before solidifying
+
+lenis.on('scroll', ({ scroll }) => {
+    if (scroll > SCROLL_THRESHOLD) {
+        header.classList.add('is-scrolled');
+    } else {
+        header.classList.remove('is-scrolled');
+    }
+});
+
+// Scroll to top
+const scrollTopBtn = document.querySelector('.js-scroll-top');
+scrollTopBtn.addEventListener('click', () => {
+    lenis.scrollTo(0);
+});
+
+
+
 // --- ANIMATIONS ---
 
 // 1. Initial Hero Entry Timeline

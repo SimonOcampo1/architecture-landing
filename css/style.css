@@ -153,3 +153,38 @@ body {
     animation: brutalShake 0.1s ease-in-out;
     border-bottom: 4px solid #2C2C2A !important;
 }
+
+/* ── Scroll-Aware Header ─────────────────────────────── */
+.js-header {
+    /* Estado inicial: transparente, texto oscuro sobre fondo claro del hero */
+    background-color: transparent;
+    color: #2C2C2A;
+
+    /* Transición suave — solo propiedades animables */
+    transition:
+        background-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.js-header.is-scrolled {
+    /* Estado solidificado al hacer scroll — fondo blanco del brand */
+    background-color: rgba(235, 235, 230, 0.97);
+    color: #2C2C2A;
+    box-shadow: 0 1px 0 rgba(44, 44, 42, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Nav links dentro del header solidificado: gris apagado por defecto */
+.js-header.is-scrolled .nav-link {
+    color: #9C9C98;
+    opacity: 1;
+}
+
+/* Link activo/hover: negro oscuro para resaltar del gris */
+.js-header.is-scrolled .nav-link.active,
+.js-header.is-scrolled .nav-link:hover {
+    color: #111111;
+    opacity: 1;
+}
