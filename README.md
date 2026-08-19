@@ -1,28 +1,33 @@
-# Estudio Monolito - Página de Inicio de Arquitectura
+# Estudio Monolito
 
-Una página de inicio monumental y brutalista para un estudio de arquitectura, construida con tecnologías web modernas.
+**Hormigón, contraste y nada más.**
 
-## Características
-- **Diseño Brutalista**: Presenta tipografía de alto contraste, diseños crudos y una paleta de colores inspirada en el hormigón.
-- **Desplazamiento Suave**: Integrado con Lenis para un desplazamiento vertical suave como la seda.
-- **Animaciones GSAP**: Presenta animaciones reveladoras complejas, efectos de paralaje de imagen y cambios de estado activados por el desplazamiento.
-- **Responsivo**: Diseño totalmente responsivo que utiliza Tailwind CSS.
+Landing page brutalista para un estudio de arquitectura. Una sola página, tres archivos, sin build.
 
-## Estructura de Archivos
-- `index.html`: El punto de entrada principal que contiene el diseño unificado de una sola página.
-- `css/style.css`: CSS personalizado para la configuración de Lenis, tipografía, formas brutalistas y tratamientos visuales.
-- `js/main.js`: Contiene toda la lógica JS para las líneas de tiempo de GSAP, las instancias de ScrollTrigger, la integración de Lenis y el manejo de formularios.
-- `assets/images/`: Contiene todas las imágenes de alta calidad de los proyectos.
+## 🚀 Características
 
-## Tecnologías Utilizadas
-- HTML5
-- Tailwind CSS v3 (vía CDN)
-- GSAP & ScrollTrigger
-- Lenis (Smooth Scroll)
+- **Tipografía de alto contraste** sobre una paleta inspirada en el hormigón.
+- **Scroll con inercia** — Lenis para el desplazamiento vertical, GSAP ScrollTrigger para cada revelación.
+- **Parallax de imágenes** que se desplazan contra la grilla al avanzar la página.
+- **Responsive** con utilidades de Tailwind CSS.
+- **Formulario de contacto** manejado en el mismo `main.js`, sin dependencias extra.
 
-## Configuración
-Simplemente abra `index.html` en su navegador o ejecute un servidor de desarrollo local:
-```bash
-npx serve .
+## 📂 Estructura
+
+```
+index.html      Diseño unificado de una sola página
+css/style.css   Configuración de Lenis, tipografía y formas brutalistas
+js/main.js      Timelines de GSAP, ScrollTrigger, Lenis y formulario
 ```
 
+## 🛠️ Stack
+
+HTML5 · Tailwind CSS · GSAP + ScrollTrigger · Lenis
+
+## 💻 Puesta en marcha
+
+```bash
+git clone https://github.com/SimonOcampo1/architecture-landing.git
+cd architecture-landing
+python -m http.server 8000
+```
